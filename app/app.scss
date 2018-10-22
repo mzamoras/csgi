@@ -1,0 +1,145 @@
+@import './assets/custom';
+@import '~angular-material/modules/scss/angular-material.scss';
+
+@mixin absPos(){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+body, html{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.container.main{
+    @include absPos();
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F0F0F0;
+    max-width: 100%;
+}
+$paperBg: #F9F9F9;
+$softBorder: #E0E0E0;
+$borderR: 4px;
+$shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+display-posts-app, new-post-app{
+    position: relative;
+    border: 1px solid transparent;
+    width: 40%;
+    height: 55%;
+    background-color: $paperBg;
+    border-radius: $borderR;
+    box-shadow: $shadow;
+
+    .title{
+        background-color: #c51162;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        border-radius: $borderR $borderR 0 0;
+        font-weight: 700;
+        margin: -1px;
+        height: 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &.spaced{
+            padding: 20px 50px;
+        }
+    }
+
+    .btm{
+        position: absolute;
+        height: 70px;
+        left: 0;
+        right: 0;
+        bottom: -70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    h3{
+        font-size: 30px;
+        font-weight: 100;
+    }
+}
+
+display-posts-app{
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li{
+            border-bottom: 1px solid $softBorder;
+            padding:20px 30px;
+        }
+    }
+}
+
+.btn{
+
+    margin-left: 30px;
+}
+
+/* display-posts-app{
+    position: relative;
+    border: 1px solid transparent;
+    width: 40%;
+    height: 45%;
+    overflow: hidden;
+    overflow-y: auto;
+    //padding: 30px;
+    background-color: $paperBg;
+    border-radius: $borderR;
+    box-shadow: $shadow;
+    
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li{
+            border-bottom: 1px solid $softBorder;
+            padding: 10px 5px;
+        }
+    }
+
+    .container{
+        //@include absPos();
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+new-post-app{
+    padding: 30px;
+    width: 40%;
+    height: 45%;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background-color: $paperBg;
+    border-radius: $borderR;
+    box-shadow: $shadow;
+} */

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="title">
+        <h3> New Post </h3>
+    </div>
+    <div class="content spaced">
+        <form role="form">
+                <div class="input-field col s6">
+                    <input ng-model="title" type="text" class="validate" required>
+                    <label for="last_name">Post Title</label>
+                </div>
+                <div class="input-field col s6">
+                        <textarea  ng-model="body" class="materialize-textarea" cols="30" rows="10"></textarea>
+                        <label for="textarea1">Textarea</label>
+                </div>
+        </form>
+    </div>
+    <div class="btm">
+            <div class="waves-effect waves-light btn pink darken-1"  ng-click="$ctrl.savePost(title,body)">Add Post</div>
+            <div class="waves-effect waves-light btn pink darken-1"  ng-click="$ctrl.persistPost(title,body)">Save Changes</div>
+    </div>
+</div>
