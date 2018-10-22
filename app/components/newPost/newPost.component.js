@@ -4,6 +4,7 @@ import { GetAllPostsSelector, GetUnSavedPostsSelector } from './newPost.selector
 class NewPostController{
     constructor($ngRedux) {
         this.$ngRedux = $ngRedux;
+        this.form = { title:"", body:"" };
     }
 
     $onInit(){
@@ -26,7 +27,10 @@ class NewPostController{
             //error: state.posts.error
         }
     }
-
+    clearPost(){
+        this.form.title= "";
+        this.form.body= "";
+    }
     savePost( title, body ){
         if( title && body ){
             const nextID = this.state.postsList.reduce( ( val, el ) => el.id > val ? el.id : val , 0);
@@ -34,6 +38,7 @@ class NewPostController{
                 id: (nextID + 1), title, author: body
             } )
         }
+        this.clearPost();
     }
 
     persistPost( ){
